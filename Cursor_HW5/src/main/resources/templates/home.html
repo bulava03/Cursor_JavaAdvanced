@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Home page</title>
+</head>
+<body>
+<h1>
+    Доброго дня,
+    <span th:style="'color: ' + ${colorRed}"
+          th:text="${username}"></span>
+    температура сьогодні
+    <span th:style="'color: ' + ${colorBlue}"
+          th:text="${temperature}"></span>
+    <span th:style="'color:' + ${color}">градусів</span>
+</h1>
+</body>
+</html>

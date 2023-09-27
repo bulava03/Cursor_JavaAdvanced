@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="musicComposition1" class="org.example.MusicComposition">
+        <constructor-arg value="Symphony No. 5"/>
+        <constructor-arg value="Ludwig van Beethoven"/>
+    </bean>
+
+    <bean id="musicComposition2" class="org.example.MusicComposition">
+        <constructor-arg value="The Four Seasons"/>
+        <constructor-arg value="Antonio Vivaldi"/>
+    </bean>
+
+    <bean id="classicalMusicPlayer" class="org.example.ClassicalMusicPlayer">
+        <constructor-arg>
+            <list>
+                <ref bean="musicComposition1"/>
+                <ref bean="musicComposition2"/>
+            </list>
+        </constructor-arg>
+    </bean>
+
+    <bean id="musicComposition3" class="org.example.MusicComposition">
+        <constructor-arg value="Bohemian Rhapsody"/>
+        <constructor-arg value="Queen"/>
+    </bean>
+
+    <bean id="musicComposition4" class="org.example.MusicComposition">
+        <constructor-arg value="Stairway to Heaven"/>
+        <constructor-arg value="Led Zeppelin"/>
+    </bean>
+
+    <bean id="rockMusicPlayer" class="org.example.RockMusicPlayer">
+        <constructor-arg>
+            <list>
+                <ref bean="musicComposition3"/>
+                <ref bean="musicComposition4"/>
+            </list>
+        </constructor-arg>
+    </bean>
+
+    <bean id="musicPlayer" class="org.example.MusicPlayer">
+        <constructor-arg ref="classicalMusicPlayer"/>
+        <constructor-arg ref="rockMusicPlayer"/>
+    </bean>
+
+</beans>

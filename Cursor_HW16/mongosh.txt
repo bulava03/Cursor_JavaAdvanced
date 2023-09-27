@@ -1,0 +1,19 @@
+use Cursor_HW16_HennadiiBulava;
+
+db.users.insertMany([
+  { firstName: "John", lastName: "Doe", email: "john.doe@example.com", age: 25, isMarried: true },
+  { firstName: "Jane", lastName: "Doe", email: "jane.doe@example.com", age: 30, isMarried: false },
+  { firstName: "Alice", lastName: "Johnson", email: "alice.johnson@example.com", age: 23, isMarried: true },
+  { firstName: "Bob", lastName: "Smith", email: "bob.smith@example.com", age: 28, isMarried: false },
+  { firstName: "Charlie", lastName: "Brown", email: "charlie.brown@example.com", age: 16, isMarried: false }
+]);
+
+db.users.find({ firstName: "John" });
+
+db.users.find({ lastName: "Doe" });
+
+db.users.find({ email: "john.doe@example.com" });
+
+db.users.find({ age: { $gt: 18 } });
+
+db.users.find({ isMarried: true });

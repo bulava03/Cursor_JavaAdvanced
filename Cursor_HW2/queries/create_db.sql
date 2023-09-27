@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS cursor_hw2;
+
+CREATE DATABASE cursor_hw2; 
